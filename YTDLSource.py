@@ -1,7 +1,6 @@
 import discord
 import asyncio
 import youtube_dl
-import urllib.parse
 
 ytdl_format_options = {
       'format': 'bestaudio/best',
@@ -15,10 +14,10 @@ ytdl_format_options = {
       'no_warnings': True,
       'default_search': 'auto',
       'source_address': '0.0.0.0'
-        }
+}
 
 ffmpeg_options = {
-        'options': '-vn'
+  'options': '-vn'
 }
 
 ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
