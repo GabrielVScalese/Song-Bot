@@ -56,12 +56,12 @@ async def show_search (videos, ctx):
 
 @client.event
 async def on_ready():
-  await client.change_presence(status=discord.Status.idle, activity=discord.Game('!acommands'))
+  await client.change_presence(activity=discord.activity.Game('!acommands'))
   print('Bot is ready!')
 
 @client.command()
 async def commands (ctx):
-  embed=discord.Embed(title="Commands", description="Here there all commands", color=0xFF5733)
+  embed=discord.Embed(title="Commands", description="Here there are all commands", color=0xFF5733)
 
   embed.set_author(name=client.user.name, icon_url='https://i.ytimg.com/vi/esX7SFtEjHg/maxresdefault_live.jpg')
 
@@ -89,7 +89,7 @@ async def yt (ctx, num, *args):
   try:
     search_num = int (num)
   except:
-    await ctx.send('**❗ Invalid number of search, canceled request*')
+    await ctx.send('**❗ Invalid number of search, canceled request**')
     return
 
   search = " ".join(args[:])
@@ -155,7 +155,7 @@ async def yt (ctx, num, *args):
 
   del players[0]
 
-  await ctx.send(f'**🎶  Now Playing: {videos[option - 1].link}**')
+  await ctx.send(f'**🎶  Now playing: {videos[option - 1].link}**')
 
 @client.command()
 async def skip (ctx):
